@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://our.company.com/order.schema.json",
+    "title": "Book Schema",
+    "description": "The book schema is the schema that is for books.js",
+    "type": "object",
+    "default": {},
+    "required": [
+        "isbn",
+        "amazon_url",
+        "author",
+        "language",
+        "publisher",
+        "title"
+    ],
+    "properties": {
+        "isbn": {
+            "type": "string",
+            "pattern": "[0-9]{9,15}",
+            "minLength": 9,
+            "maxLength": 15
+        },
+        "amazon_url": {
+            "type": "string",
+            "pattern": "(^(http://a.co/)|^(https://amazon.com)).*"
+        },
+        "author": { "type": "string" },
+        "language": { "type": "string" },
+        "pages": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "publisher": { "type": "string" },
+        "title": { "type": "string" },
+        "year": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2020
+        }
+    },
+    "additionalProperties": false
+
+}
